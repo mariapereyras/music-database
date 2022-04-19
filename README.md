@@ -37,7 +37,7 @@ Then moving on to the queries, the questions I wanted to answer from these table
 
 `SELECT name FROM bands;`
 
-![alt text](/Users/mariapereyra/Documents/Projects/music-database/screenshots/1.png "Hello")
+![alt text](https://github.com/mariapereyras/music-database/blob/main/screenshots/1.png "Hello")
 
 *Select the Oldest Album*
 
@@ -45,7 +45,7 @@ Then moving on to the queries, the questions I wanted to answer from these table
 ORDER BY release_year 
 FETCH FIRST 1 row ONLY;`
 
-![alt text](/Users/mariapereyra/Documents/Projects/music-database/screenshots/2.png "Hello")
+![alt text](https://github.com/mariapereyras/music-database/blob/main/screenshots/2.png "Hello")
 
 
 *Get all Bands that have Albums*
@@ -53,7 +53,7 @@ FETCH FIRST 1 row ONLY;`
 `SELECT b.name, albums.name FROM bands as b
 JOIN albums ON b.id = albums.band_id;`
 
-![alt text](/Users/mariapereyra/Documents/Projects/music-database/screenshots/3.png "Hello")
+![alt text](https://github.com/mariapereyras/music-database/blob/main/screenshots/3.png "Hello")
 
 
 *Get all Bands that have No Albums*
@@ -62,7 +62,7 @@ LEFT JOIN albums ON b.id = albums.band_id
 GROUP BY b.id, albums.band_id
 HAVING count(albums.id) = 0`
 
-![alt text](/Users/mariapereyra/Documents/Projects/music-database/screenshots/4.png "Hello")
+![alt text](https://github.com/mariapereyras/music-database/blob/main/screenshots/4.png "Hello")
 
 *Get the Longest Album*
 
@@ -72,7 +72,7 @@ GROUP BY albums.id
 ORDER BY total_length DESC
 FETCH FIRST 1 row ONLY;`
 
-![alt text](/Users/mariapereyra/Documents/Projects/music-database/screenshots/5.png "Hello")
+![alt text](https://github.com/mariapereyras/music-database/blob/main/screenshots/5.png "Hello")
 
 *Update the Release Year of the Album with no Release Year*
 
@@ -90,7 +90,7 @@ FETCH FIRST 1 row ONLY;`
 
 `SELECT AVG(length) FROM songs;`
 
-![alt text](/Users/mariapereyra/Documents/Projects/music-database/screenshots/6.png "Hello")
+![alt text](https://github.com/mariapereyras/music-database/blob/main/screenshots/6.png "Hello")
 
 *Select the longest Song off each Album*
 
@@ -99,7 +99,7 @@ JOIN albums on albums.id = songs.album_id
 GROUP BY albums.name
 ORDER BY longest_song DESC;`
 
-![alt text](/Users/mariapereyra/Documents/Projects/music-database/screenshots/7.png "Hello")
+![alt text](https://github.com/mariapereyras/music-database/blob/main/screenshots/7.png "Hello")
 
 *Get the number of Songs for each Band*
 
@@ -108,4 +108,4 @@ JOIN songs on albums.id = songs.album_id
 JOIN bands on bands.id = albums.band_id
 GROUP BY bands.name;`
 
-![alt text](/Users/mariapereyra/Documents/Projects/music-database/screenshots/8.png "Hello")
+![alt text](https://github.com/mariapereyras/music-database/blob/main/screenshots/8.png "Hello")
